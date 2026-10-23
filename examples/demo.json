@@ -1,0 +1,14 @@
+{
+  "title": "CREATE / INSPIRE",
+  "format": "landscape",
+  "fps": 30,
+  "transition": 0.45,
+  "background": "#090c18",
+  "gradient": true,
+  "accent": "#c5fc60",
+  "scenes": [
+    { "text": "Ideas deserve\nto move.", "duration": 3, "animation": "slide", "label": "01 / THE IDEA" },
+    { "text": "Make every\nword count.", "duration": 3, "animation": "typewriter", "label": "02 / THE MESSAGE" },
+    { "text": "Your story.\nIn motion.", "duration": 3, "animation": "fade", "label": "03 / THE IMPACT" }
+  ]
+}
