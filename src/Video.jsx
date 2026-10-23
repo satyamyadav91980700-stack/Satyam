@@ -17,7 +17,7 @@ function Scene({scene, index, script}) {
     fontSize, lineHeight: 1.08, fontWeight: 850, letterSpacing: '-0.055em',
     whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', margin: '30px 0',
     color: scene.color ?? '#f6f7fb',
-    opacity: scene.animation === 'fade' ? interpolate(frame, [0, 18], [0, 1], clamp) : 1,
+    opacity: scene.animation === 'fade' ? interpolate(frame, [0, Math.min(18, scene.frames - 1)], [0, 1], clamp) : 1,
     transform: scene.animation === 'slide' ? `translateY(${(1 - intro) * 90}px)` : 'none',
   };
   return <AbsoluteFill style={{opacity, background: scene.background ?? script.background, overflow: 'hidden'}}>
@@ -42,6 +42,6 @@ export function Video({script}) {
   return <AbsoluteFill style={{background: script.background, fontFamily: 'Arial, "Noto Sans", sans-serif'}}>
     {script.scenes.map((scene, i) => <Sequence key={i} from={scene.start} durationInFrames={scene.frames}><Scene scene={scene} index={i} script={script} /></Sequence>)}
     <div style={{position: 'absolute', bottom: 0, left: 0, height: 5, width: `${(frame + 1) / script.durationInFrames * 100}%`, background: script.accent}} />
-    {script.music && <Audio src={staticFile(script.music.src)} loop volume={f => (script.music.volume ?? 0.18) * Math.min(interpolate(f, [0, fadeFrames], [0, 1], clamp), interpolate(f, [script.durationInFrames - fadeFrames, script.durationInFrames - 1], [1, 0], clamp))} />}
+    {script.music && <Audio src={staticFile(script.music.src)} loop volume={(script.music.volume ?? 0.18) * Math.min(interpolate(frame, [0, fadeFrames], [0, 1], clamp), interpolate(frame, [script.durationInFrames - fadeFrames, script.durationInFrames - 1], [1, 0], clamp))} />}
   </AbsoluteFill>;
 }
