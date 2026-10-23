@@ -1,0 +1,33 @@
+{
+  "name": "ai-motion-graphics-reel",
+  "version": "1.0.0",
+  "description": "Cinematic 3D AI Motion Graphics Instagram Reel in Remotion (1080x1920, 30fps)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 0.0.0.0 --port 3000",
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "studio": "remotion studio",
+    "render": "node scripts/render-mp4.mjs",
+    "render:remotion": "remotion render src/index.js AIMotionReel out/ai-motion-graphics-reel.mp4",
+    "verify": "node scripts/verify-project.mjs",
+    "audio:build": "python3 scripts/generate_audio_assets.py"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.1.0",
+    "@fontsource/noto-sans-devanagari": "^5.1.0",
+    "@fontsource/space-grotesk": "^5.1.0",
+    "@remotion/cli": "4.0.242",
+    "@remotion/player": "4.0.242",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.242"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.24.0",
+    "vite": "^6.0.5"
+  }
+}

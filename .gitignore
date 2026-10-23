@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+.vite/
+.cache/
+scripts/_remotion-ssr-shim.jsx
+scripts/_ssr-entry.jsx
+scripts/_ssr-bundle.mjs
+public/rendered/_*
+public/rendered/
+public/app/
